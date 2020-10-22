@@ -650,7 +650,7 @@ class Trainer:
 
         # Multi-gpu training (should be after apex fp16 initialization)
         if self.args.n_gpu > 1:
-            model = torch.nn.DataParallel(model)
+            model = torch.nn.DataParallel(model, device_ids=self.args.device_ids)
 
         # Distributed training (should be after apex fp16 initialization)
         if self.args.local_rank != -1:
@@ -1326,7 +1326,7 @@ class Trainer:
         model = self.model
         # multi-gpu eval
         if self.args.n_gpu > 1:
-            model = torch.nn.DataParallel(model)
+            model = torch.nn.DataParallel(model, device_ids=self.args.device_ids)
         # Note: in torch.distributed mode, there's no point in wrapping the model
         # inside a DistributedDataParallel as we'll be under `no_grad` anyways.
 
