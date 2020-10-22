@@ -604,7 +604,7 @@ glue_tasks_num_labels = {
     "qnli": 2,
     "rte": 2,
     "wnli": 2,
-    "class6": 2,
+    "class6": 6,
 }
 
 glue_processors = {
