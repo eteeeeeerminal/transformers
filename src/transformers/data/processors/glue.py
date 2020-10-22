@@ -556,7 +556,7 @@ class WnliProcessor(DataProcessor):
             examples.append(InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
-class OriginalProcessor(DataProcessor):
+class Class6Processor(DataProcessor):
     """Processor for the original data set."""
 
     def get_example_from_tensor_dict(self, tensor_dict):
