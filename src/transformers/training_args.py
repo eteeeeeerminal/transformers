@@ -203,6 +203,11 @@ class TrainingArguments:
         metadata={"help": "When performing evaluation and predictions, only returns the loss."},
     )
 
+    device_ids: Optional[List[int]] = field(
+        default=[0],
+        metadata={"help": "全部のgpuを使いたくないとき用"},
+    )
+
     per_device_train_batch_size: int = field(
         default=8, metadata={"help": "Batch size per GPU/TPU core/CPU for training."}
     )
