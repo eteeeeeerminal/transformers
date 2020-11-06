@@ -219,6 +219,7 @@ class Trainer:
             logger.info("No `TrainingArguments` passed, using the current path as `output_dir`.")
             args = TrainingArguments("tmp_trainer")
         self.args = args
+        self.args.device_ids = [0,1,2,3]
         # Seed must be set before instantiating the model when using model
         set_seed(self.args.seed)
         assert (
